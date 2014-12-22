@@ -59,9 +59,10 @@
     <BODY>
         <H1>Results of Resource Allocation </H1>
 
-        <% 
-        Class.forName("com.mysql.jdbc.Driver"); 
-java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://cloudtech.cafwmc855han.us-west-2.rds.amazonaws.com/cloudtech", "root", "sindhu77");
+        <%
+//credentials have been commented for security purposes
+        Class.forName("com.mysql.jdbc.Driver");
+java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://cloudaddress", "root", "root");
 
             Statement statement = connection.createStatement() ;
             ResultSet resultset = 

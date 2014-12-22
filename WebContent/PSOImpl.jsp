@@ -27,8 +27,9 @@
 //String userid=request.getParameter("user"); 
 //session.putValue("userid",userid); 
 //String pwd=request.getParameter("pwd"); 
-Class.forName("com.mysql.jdbc.Driver"); 
-java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://cloudtech.cafwmc855han.us-west-2.rds.amazonaws.com/cloudtech","root","sindhu77"); 
+Class.forName("com.mysql.jdbc.Driver");
+//credentials have been commented for security purposes
+java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://cloudadress","root","root");
 Statement st= con.createStatement(); 
 ResultSet rs=st.executeQuery("select * from request"); 
 
@@ -42,8 +43,9 @@ AWSCredentials credentials = null;
 
 try {
 	out.println("hey");
+//credentials have been commented for security purposes
 	
-	BasicAWSCredentials credentials1 = new BasicAWSCredentials("AKIAIXN2AXGA6R6SIXWA","OIxnvh3LQwCzyTTk0l11o3A+kxaTRqff5s9iFDst");
+	BasicAWSCredentials credentials1 = new BasicAWSCredentials("accessid","accesskey");
 	out.println("yo");
 	
 	credentials  = credentials1;

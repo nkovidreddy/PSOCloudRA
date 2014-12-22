@@ -61,9 +61,11 @@
     <BODY>
         <H1>Billing Details of Allocated Resources for all requests </H1>
 
-        <% 
+        <%
+//credentials have been commented for security purposes
+
         Class.forName("com.mysql.jdbc.Driver"); 
-java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://cloudtech.cafwmc855han.us-west-2.rds.amazonaws.com/cloudtech", "root", "sindhu77");
+java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://cloudaddress", "root", "root");
 
             Statement statement = connection.createStatement() ;
             ResultSet resultset = 

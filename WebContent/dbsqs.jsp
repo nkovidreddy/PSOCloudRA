@@ -27,8 +27,9 @@
 //String userid=request.getParameter("user"); 
 //session.putValue("userid",userid); 
 //String pwd=request.getParameter("pwd"); 
-Class.forName("com.mysql.jdbc.Driver"); 
-java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://cloudtech.cafwmc855han.us-west-2.rds.amazonaws.com/cloudtech","root","sindhu77"); 
+Class.forName("com.mysql.jdbc.Driver");
+//credentials have been commented for security purposes
+java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://cloudaddress","root","root");
 Statement st= con.createStatement(); 
 ResultSet rs=st.executeQuery("select * from request"); 
 
@@ -41,11 +42,9 @@ ResultSet rs=st.executeQuery("select * from request");
 AWSCredentials credentials = null;
 
 try {
-	out.println("hey");
-	
-	BasicAWSCredentials credentials1 = new BasicAWSCredentials("AKIAIXN2AXGA6R6SIXWA","OIxnvh3LQwCzyTTk0l11o3A+kxaTRqff5s9iFDst");
-	out.println("yo");
-	
+
+//credentials have been commented for security purposes
+	BasicAWSCredentials credentials1 = new BasicAWSCredentials("accessid","accesskey");
 	credentials  = credentials1;
 	out.println(credentials.getAWSAccessKeyId());
 	
@@ -81,14 +80,12 @@ try {
     CreateQueueRequest createBeeQueueRequest = new CreateQueueRequest("BEEQueue");
     String myBeeQueueUrl = sqs.createQueue(createBeeQueueRequest).getQueueUrl();
     
-    out.println("MyQueueURL=" +myPSOQueueUrl);
     // List queues
     //System.out.println("Listing all queues in your account.\n");
     for (String queueUrl : sqs.listQueues().getQueueUrls()) {
         out.println("  QueueUrl: " + queueUrl);
     }
-    out.println();
-
+    
     // Send a message
    out.println("Sending a message to MyQueue.\n");
    //establish mysql connection - cloud

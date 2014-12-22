@@ -54,7 +54,7 @@ public class PSOAlgorithm {
 	 String returnMsg = null;
 
 		try {
-			BasicAWSCredentials credentials1 = new BasicAWSCredentials("AKIAIXN2AXGA6R6SIXWA","OIxnvh3LQwCzyTTk0l11o3A+kxaTRqff5s9iFDst");
+			BasicAWSCredentials credentials1 = new BasicAWSCredentials("username","acceskey");
 			credentials  = credentials1;
 			} catch (Exception e) {
 		    throw new AmazonClientException(
@@ -65,9 +65,9 @@ public class PSOAlgorithm {
 		}
 
 		
-		
+		//credentials have been removed for security purposes as we are using amazon
 		Class.forName("com.mysql.jdbc.Driver"); 
-		java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://cloudtech.cafwmc855han.us-west-2.rds.amazonaws.com/cloudtech","root","sindhu77"); 
+		java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://cloudaddress","root","root");
 		//Receive requests from SQS
 		AmazonSQS sqs = new AmazonSQSClient(credentials);
 		Region usWest2 = Region.getRegion(Regions.US_WEST_2);
